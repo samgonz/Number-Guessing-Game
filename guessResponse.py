@@ -7,3 +7,9 @@ def returnGuessResponse(guesses_left, mystery_number, user_guess):
             print('Too low.')
         print('guesses_left:', guesses_left)
     return guesses_left 
+
+
+def userWin(mystery_number, user_guess):
+    if user_guess == mystery_number:
+        user_win = True
+    return user_win

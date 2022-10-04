@@ -18,10 +18,12 @@ while guesses_left > 0 and user_win == False:
     """    
     user_guess = int(input('Please enter your guess from 1 - 100.\n'))
     
+    # Adjusts the guesses left and gives the user a hint
     guesses_left = guessResponse.returnGuessResponse(guesses_left, mystery_number, user_guess)
     
-    if user_guess == mystery_number:
-        user_win = True
+    # Checks to see if user wins
+    user_win = guessResponse.userWin(mystery_number, user_guess)
+    
 # Print out the results of the game
 if user_win == True:
     print('User has guessed the correct answer.')
