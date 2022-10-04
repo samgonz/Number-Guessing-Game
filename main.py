@@ -3,14 +3,15 @@ from random import randint
 import splashScreen
 import guessResponse
 
-guesses_left = 5
+print(splashScreen.logo)
+
+user_difficulty = input('What difficulty you would like? 1[easy] - 5[hard]\n')
+guesses_left = 8 - int(user_difficulty)
 mystery_number = randint(1, 100)
 user_win = False
 
-print(splashScreen.logo)
-
 # Loop through the guesses
-while guesses_left > 0 or user_win == True:
+while guesses_left > 0 and user_win == False:
     """Asks the user to choose a number. If the user selects the correct number then they win
     Otherwise they guess the number again and they get 1 less guess.
     Game over is when the user guesses the number or they fail to guess.
@@ -25,5 +26,5 @@ while guesses_left > 0 or user_win == True:
 if user_win == True:
     print('User has guessed the correct answer.')
 if user_win == False:
-    print(f'User has not guessed the correct answer. The correct answer was {mystery_number}')
+    print(f'User has not guessed the correct answer.\nThe correct answer was {mystery_number}')
     
